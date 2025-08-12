@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AOS Efekt Demo</title>
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+        .box {
+            background: white;
+            margin: 50px auto;
+            padding: 50px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center; padding: 30px;">🎬 AOS Efekt Demo</h1>
+
+    <!-- Fade -->
+    <div class="box" data-aos="fade">fade</div>
+    <div class="box" data-aos="fade-up">fade-up</div>
+    <div class="box" data-aos="fade-down">fade-down</div>
+    <div class="box" data-aos="fade-left">fade-left</div>
+    <div class="box" data-aos="fade-right">fade-right</div>
+    <div class="box" data-aos="fade-up-right">fade-up-right</div>
+    <div class="box" data-aos="fade-up-left">fade-up-left</div>
+    <div class="box" data-aos="fade-down-right">fade-down-right</div>
+    <div class="box" data-aos="fade-down-left">fade-down-left</div>
+
+    <!-- Flip -->
+    <div class="box" data-aos="flip-left">flip-left</div>
+    <div class="box" data-aos="flip-right">flip-right</div>
+    <div class="box" data-aos="flip-up">flip-up</div>
+    <div class="box" data-aos="flip-down">flip-down</div>
+
+    <!-- Zoom -->
+    <div class="box" data-aos="zoom-in">zoom-in</div>
+    <div class="box" data-aos="zoom-in-up">zoom-in-up</div>
+    <div class="box" data-aos="zoom-in-down">zoom-in-down</div>
+    <div class="box" data-aos="zoom-in-left">zoom-in-left</div>
+    <div class="box" data-aos="zoom-in-right">zoom-in-right</div>
+    <div class="box" data-aos="zoom-out">zoom-out</div>
+    <div class="box" data-aos="zoom-out-up">zoom-out-up</div>
+    <div class="box" data-aos="zoom-out-down">zoom-out-down</div>
+    <div class="box" data-aos="zoom-out-left">zoom-out-left</div>
+    <div class="box" data-aos="zoom-out-right">zoom-out-right</div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false
+        });
+    </script>
+</body>
+</html>

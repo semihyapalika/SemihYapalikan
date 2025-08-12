@@ -1,0 +1,70 @@
+/* Genel */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+.highlight { color: #00ff88; }
+
+/* Ana sayfa header */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10%;
+    background: linear-gradient(135deg, #000, #111);
+    border-bottom: 2px solid #00ff88;
+}
+.intro { max-width: 60%; }
+.intro h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.intro p { font-size: 1.1rem; color: #ccc; }
+.buttons { display: flex; flex-direction: row; gap: 15px; }
+.btn {
+    background: #00ff88;
+    color: #000;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-align: center;
+}
+.btn:hover { background: #00cc6a; transform: scale(1.05); }
+
+/* Orta resim */
+.center-image { text-align: center; padding: 50px; }
+.center-image img {
+    max-width: 90%;
+    border: 3px solid #00ff88;
+    border-radius: 10px;
+}
+
+/* Alt sayfa header */
+.sub-header {
+    background: #111;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #00ff88;
+}
+.back-btn {
+    color: #00ff88;
+    text-decoration: none;
+    font-weight: bold;
+}
+.back-btn:hover { text-decoration: underline; }
+
+/* Bölümler */
+section { padding: 50px 10%; }
+section p { line-height: 1.6; color: #ccc; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero { flex-direction: column; text-align: center; }
+    .intro { max-width: 100%; }
+    .buttons { flex-direction: row; margin-top: 20px; }
+    .btn { flex: 1; }
+}
