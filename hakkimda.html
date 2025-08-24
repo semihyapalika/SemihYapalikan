@@ -6,19 +6,74 @@
     <title>Hakkımda</title>
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+
 </head>
 <body>
 
 <header class="sub-header">
+    
+    <a href="index.html" class="back-btn">← Geri</a>
     <h1>Hakkımda</h1>
-    <a href="index.html" class="back-btn">⬅ Geri Dön</a>
-</header>
 
-<section data-aos="fade-up">
-    <p>10 yıldır siber güvenlik alanında çalışıyor, kurumlara güvenlik danışmanlığı yapıyorum...</p>
+</header>
+<section class="timeline">
+  <div class="timeline-item left" data-aos="fade-right">
+    <h2>Üniversiteye başladım.</h2>
+    <p>2022 Isparta Uygulamalı Bilimler Üniversitesi Bilişim Güvenliği Teknolojileri Bölümüne başladım. </p>
+  </div>
+
+  <div class="timeline-item right" data-aos="fade-left">
+    <h2>İlk siber güvenlik projemi yaptım.</h2>
+    <p>Infiltrator(köstebek) projesin aslında bir stealler temel amacı bizim sahip olduğumuz bir dosyanın ele geçirilmesi durumunda. Dosyayı geri almak için kullanılacak bir araç olarak tasarlandı. Projenin detayları <a href="file:///home/bodiedblood/Documents/website/projeler.html"> PROJELER</a> 
+      kısmından ulaşabilirsiniz. </p>
+  </div>
+
+  <div class="timeline-item left" data-aos="fade-right">
+
+    <h2>İş yeri eğitimine başladım ve bitirdim.</h2>
+  <div class="resim-container">
+    <div class="isyeri1 duzenlenmis-resim" data-aos="fade-right"></div>
+        <div class="isyeri2 resim-container duzenlenmis-resim" data-aos="fade-right"></div>
+    <div class="isyeri3 resim-container duzenlenmis-resim" data-aos="fade-right"></div>
+
+  </div>
+    
+
+    <p>02-06.2024 kısa bir süre bir altyapı kurumunda, geriye kalan uzun bir süre ise Verkosis Bilişim Teknolojileri şirketinde işyeri eğitimimimi tamamladım. </p>
+  </div>
+
+  <div class="timeline-item right" data-aos="fade-left">
+    <h2>Siber Vatan Programına Başladım.</h2>
+    <div class="sibervatan duzenlenmis-resim-tek" ></div>
+    <p>Üniversite içinde yapılan ön eleme sonrasında 4 farklı eğitim[Web Güvenliği, Linux ve Beyaz Şapkalı Hacker,
+      Sızma Testi Eğitimi,Zararlı Yazılım Analizi ve Tersine Mühendislik] eğitim gördüm .</p>
+  </div>
+
+  
+  <div class="timeline-item left" data-aos="fade-right">
+
+    <h2>Stajımı Tamamladım</h2>
+    <p>Ruby Cyber Labs şirketinde stajımı tamamladım. Adli dinamiklerle siber güvenliğin nasıl kullanıldığını
+    deneyimleme fırsatı buldum. Çok farklı alanlarda başlamadan önce tahmin edemeyeceğim kadar çok şey
+     katarak stajımı bitirdim. </p>
+    <div class="ruby duzenlenmis-resim-tek-r" ></div>
+  </div>
+
+   <div class="timeline-item right" data-aos="fade-left">
+    <h2>Mezun Oldum</h2>
+    <p>Bilişim Güvenliği Teknolojileri bölümünden 3,62 ortalamayla fakülte üçüncüsü oalrak mezun oldum.</p>
+    <div class="mezun duzenlenmis-resim-tek" ></div>
+
+  </div>
 </section>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: true });</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1200, 
+        once: true      
+    });
+</script>
 </body>
 </html>
