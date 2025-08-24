@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Siber Güvenlik</title>
+
+    <!-- AOS Kütüphanesi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #00ff88;
+            position: relative;
+        }
+
+        header h1 {
+            color: #00ff88;
+            margin: 0;
+        }
+
+        /* Geri Butonu */
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background-color: transparent;
+            border: 2px solid #00ff88;
+            color: #00ff88;
+            padding: 8px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #00ff88;
+            color: #0a0a0a;
+        }
+
+        .blog-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .blog-card {
+        border: 1px solid #00ff88;
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 14px 0;
+        background: #111;
+        cursor: pointer;               /* tüm kutu tıklanabilir */
+        transition: background .25s;
+        }
+        .blog-card:hover { background: #151515; }
+
+        .blog-title {
+        margin: 0;
+        color: #00ff88;
+        }
+
+        /* İçeriği “slide” ile aç/kapat */
+        .blog-content {
+        max-height: 0;                 /* kapalı */
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height .4s ease, opacity .3s ease;
+        will-change: max-height, opacity;
+        padding-top: 0;                /* kapalıyken boşluk olmasın */
+        }
+        .blog-card.open .blog-content {
+        max-height: 600px;             /* içerik uzunluğuna göre yeterli büyük bir değer */
+        opacity: 1;
+        padding-top: 10px;
+        }
+
+
+        .post {
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content:center; /* yatay ortala */
+            align-items: center;     /* dikey ortala */
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        .post:hover {
+            transform: scale(1.02);
+        }
+
+        .post h2 {
+            color: #00ff88;
+        }
+
+        .post p {
+            line-height: 1.6;
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: #888;
+        }
+        .icerik {
+        padding: 10px;
+        background: #111;
+        color: #0f0;
+        border-radius: 8px;
+        margin-top: 8px;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">← Geri</a>
+        <h1>🛡 Semih's Blog</h1>
+        <p>En son güncelleme burada yazacak.</p>
+    </header>
+
+
+<div class="blog-card">
+  <h3 class="blog-title">Blog Yazısı 1</h3>
+  <div class="blog-content">
+    <p>Burada blog 1 içeriği var. Detay metin...</p>
+  </div>
+</div>
+
+
+<div class="blog-card">
+  <h3 class="blog-title">Blog Yazısı 1</h3>
+  <div class="blog-content">
+    <p>Burada blog 1 içeriği var. Detay metin...</p>
+  </div>
+</div>
+
+<div class="blog-card">
+  <h3 class="blog-title">Blog Yazısı 1</h3>
+  <p class="date">20 Ağustos 2025</p>
+  <div class="blog-content">
+    <p>Burada blog 1 içeriği var. Detay metin...</p>
+  </div>
+</div>
+
+
+
+<script>
+  // Tüm kartlara tek tek tıklama bağla
+  document.querySelectorAll('.blog-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Kartın içinde bir linke tıklandıysa normal davran (yönlendir)  
+    //
+   
+      if (e.target.closest('a')) return;
+
+      // Sadece bu kartı aç/kapat
+      card.classList.toggle('open');
+    });
+  });
+</script>
+
+        
+        
+
+    
+
+    <!-- AOS Script 
+     
+    <div class="center-image" data-aos="zoom-in">
+        <img src="ben.jpg" style="width:900px; height:600px; object-fit:cover;">
+    </div>
+    
+    -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
+</body>
+</html>
