@@ -181,8 +181,8 @@ body {
     background: #111;
     padding: 20px 10%;
     display: flex;
-    justify-content: right;
-    text-align: right;
+    justify-content: left;
+    text-align: left;
     border-bottom: 2px solid #00ff88;
 }
 
