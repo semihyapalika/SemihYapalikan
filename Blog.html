@@ -1,147 +1,131 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Siber Güvenlik</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Siber Güvenlik</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-        header {
-            background-color: #111;
-            padding: 20px;
-            border-bottom: 2px solid #00ff88;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            position: relative;
-        }
+header {
+    background-color: #111;
+    padding: 20px;
+    border-bottom: 2px solid #00ff88;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-        .back-btn {
-            position: static;
-            margin-right: auto;
-            background-color: transparent;
-            border: 2px solid #00ff88;
-            color: #00ff88;
-            padding: 8px 15px;
-            font-size: 14px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
+.back-btn {
+    background-color: transparent;
+    border: 2px solid #00ff88;
+    color: #00ff88;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    order: 1; /* flex sırası */
+}
 
-        .back-btn:hover {
-            background-color: #00ff88;
-            color: #0a0a0a;
-        }
+.back-btn:hover {
+    background-color: #00ff88;
+    color: #0a0a0a;
+}
 
-        header h1 {
-            color: #00ff88;
-            margin: 0 auto;
-            text-align: center;
-            flex: 1;
-        }
+header h1 {
+    color: #00ff88;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+    order: 2; /* flex sırası */
+}
 
-        #tarih {
-            width: 100%;
-            text-align: center;
-            color: #888;
-            margin-top: 5px;
-        }
+#tarih {
+    width: 100%;
+    text-align: center;
+    color: #888;
+    margin-top: 5px;
+    order: 3; /* flex sırası */
+}
 
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-            .back-btn {
-                margin-bottom: 10px;
-            }
-        }
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .back-btn {
+        align-self: flex-end; /* mobilde sağa yasla */
+        margin-bottom: 10px;
+    }
+    header h1 {
+        margin: 0;
+        flex: none;
+    }
+}
 
-        .blog-container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+/* BLOG KARTLARI */
+.blog-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
 
-        .blog-card {
-            border: 1px solid #00ff88;
-            border-radius: 10px;
-            padding: 16px 18px;
-            margin: 14px 0;
-            background: #111;
-            cursor: pointer;
-            transition: background 0.25s;
-        }
+.blog-card {
+    border: 1px solid #00ff88;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 14px 0;
+    background: #111;
+    cursor: pointer;
+    transition: background 0.25s;
+}
 
-        .blog-card:hover {
-            background: #151515;
-        }
+.blog-card:hover {
+    background: #151515;
+}
 
-        .blog-title {
-            margin: 0;
-            color: #00ff88;
-        }
+.blog-title {
+    margin: 0;
+    color: #00ff88;
+}
 
-        .blog-content {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.4s ease, opacity 0.3s ease;
-            will-change: max-height, opacity;
-            padding-top: 0;
-        }
+.blog-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    padding-top: 0;
+}
 
-        .blog-card.open .blog-content {
-            max-height: 600px;
-            opacity: 1;
-            padding-top: 10px;
-        }
+.blog-card.open .blog-content {
+    max-height: 600px;
+    opacity: 1;
+    padding-top: 10px;
+}
 
-        .post {
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 100px;
-            margin-right: 100px;
-        }
+.date {
+    font-size: 0.9em;
+    color: #888;
+}
 
-        .post:hover {
-            transform: scale(1.02);
-        }
-
-        .post h2 {
-            color: #00ff88;
-        }
-
-        .post p {
-            line-height: 1.6;
-        }
-
-        .date {
-            font-size: 0.9em;
-            color: #888;
-        }
-
-        .icerik {
-            padding: 10px;
-            background: #111;
-            color: #0f0;
-            border-radius: 8px;
-            margin-top: 8px;
-        }
-    </style>
+.icerik {
+    padding: 10px;
+    background: #111;
+    color: #0f0;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+</style>
 </head>
 <body>
 
@@ -162,26 +146,26 @@
 </div>
 
 <script>
-    const today = new Date();
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById('tarih').innerText = today.toLocaleDateString('tr-TR', options);
+const today = new Date();
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+document.getElementById('tarih').innerText = today.toLocaleDateString('tr-TR', options);
 </script>
 
 <script>
-    document.querySelectorAll('.blog-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-            if (e.target.closest('a')) return;
-            card.classList.toggle('open');
-        });
+document.querySelectorAll('.blog-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        card.classList.toggle('open');
     });
+});
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({
-        duration: 800,
-        once: true
-    });
+AOS.init({
+    duration: 800,
+    once: true
+});
 </script>
 
 </body>
