@@ -1,38 +1,108 @@
-/* Genel Resim Ayarları */
-.duzenlenmis-resim, 
-.duzenlenmis-resim-tek, 
-.duzenlenmis-resim-tek-r, 
-.duzenlenmis-resim-tek-p {
+.duzenlenmis-resim {
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     object-position: center;
     border-radius: 2cm;
-    width: 100%;
-    height: auto;
-    max-width: 500px;
 }
 
-/* Resim Container */
 .resim-container {
     display: flex;
-    flex-wrap: wrap;       /* mobilde alt alta sarması için */
     gap: 20px;
     justify-content: center;
 }
 
-/* Post ve Proje Kutusu */
+.duzenlenmis-resim-tek {
+    width: 350px;
+    height: 500px;
+    object-position:right;
+    border-radius: 2cm;
+}
+
+.duzenlenmis-resim-tek-r {
+    width: 500px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1cm;
+}
+.duzenlenmis-resim-tek-p {
+    width: 100%;           /* ekran genişliğine uyumlu */
+    max-width: 500px;      /* desktop için orijinal maksimum genişlik */
+    height: auto;           /* yükseklik içeriğe göre esnek */
+    aspect-ratio: 5 / 5;   /* 500x400 oranını korur */
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 1cm;
+}
+
+/* Mobil cihazlar için ek ayar */
+@media (max-width: 768px) {
+        .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .intro {
+        max-width: 100%;
+    }
+    .buttons {
+        flex-direction: row;
+        margin-top: 20px;
+    }
+    .btn {
+        flex: 1;
+    }
+
+
+    .timeline{
+      
+    }
+    .timeline-item.right{
+      object-fit: cover;
+    }
+
+
+ .duzenlenmis-resim-tek {
+        max-width: 90%;       /* mobilde biraz boşluk */
+        object-fit: cover;
+        object-position: right;
+      }
+
+    .post {
+          /* öğeleri alt alta yerleştir */
+        height: auto;            /* yüksekliği içeriğe göre ayarla */
+        
+        padding-top: 5%;         /* üst boşluğu biraz azalt */
+    }
+
+    .proje-kutu {
+      flex-direction: column;  
+      width: 90%;          /* mobilde genişliği artır, kenarlardan boşluk bırak */
+        height:auto ;    /* yüksekliği içeriğe göre ayarla */
+    }
+    .duzenlenmis-resim-tek-p {
+    
+    max-width: 90%;    /* mobilde biraz boşluk bırak */
+    }
+
+}
+
+
+
+
+
 .post {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;       /* mobilde alt alta */
-    height: auto;
-    padding: 5% 2%;
-    gap: 20px;
+    height: 50vh;       /* desktop için yükseklik */
+    padding-top: 10%;   /* desktop için üst boşluk */
+    flex-wrap: wrap;    /* mobilde alt alta geçmesi için */
+    gap: 20px;          /* iç öğeler arası boşluk */
 }
-
 .proje-kutu {
-    flex: 1 1 300px;       /* mobilde esnek genişlik */
-    min-height: 300px;
+    width: auto;              /* desktop için genişlik */
+    min-height: 400px;       /* minimum yükseklik */
     background: #111;
     color: #0f0;
     text-align: center;
@@ -40,10 +110,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 20px;           /* içerik ile kenar boşluğu */
 }
 
-/* Body ve Highlight */
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     margin: 0;
@@ -52,14 +121,14 @@ body {
     color: #e0e0e0;
 }
 
-.highlight { color: #00ff88; }
+.highlight {
+    color: #00ff88;
+}
 
-/* Hero Bölümü */
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;       /* mobilde alt alta */
     padding: 60px 10%;
     background: linear-gradient(135deg, #000, #111);
     border-bottom: 2px solid #00ff88;
@@ -67,26 +136,22 @@ body {
 
 .intro {
     max-width: 60%;
-    flex: 1 1 100%;        /* mobilde tam genişlik */
 }
 
 .intro h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
 .intro p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #ccc;
 }
 
-/* Buttons */
 .buttons {
     display: flex;
     flex-direction: row;
     gap: 15px;
-    flex-wrap: wrap;       /* mobilde alt alta */
-    justify-content: center;
 }
 
 .btn {
@@ -105,35 +170,30 @@ body {
     transform: scale(1.05);
 }
 
-/* Center Image */
 .center-image {
     text-align: center;
-    padding: 20px;
+    padding: 50px;
 }
 
 .center-image img {
-    max-width: 100%;
-    height: auto;
+    max-width: 90%;
     border: 3px solid #00ff88;
     border-radius: 10px;
 }
 
-/* Sub Header */
 .sub-header {
     background: #111;
     padding: 20px 10%;
     display: flex;
-    justify-content: space-between; /* sağdan sola değil her zaman esnek */
-    flex-wrap: wrap;
-    text-align: center;
+    justify-content: right;
+    text-align: right;
     border-bottom: 2px solid #00ff88;
 }
 
-/* Back Button */
 .back-btn {
-    position: relative;
-    left: 0;
-    top: 0;
+    position: absolute;
+    left: 40px;
+    top: 40px;
     background-color: transparent;
     border: 2px solid #00ff88;
     color: #00ff88;
@@ -143,55 +203,59 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
-    margin-bottom: 10px;
 }
 
-.back-btn:hover { text-decoration: underline; }
+.back-btn:hover {
+    text-decoration: underline;
+}
 
-/* Bölümler */
-section { padding: 50px 5%; }
-section p { line-height: 1.6; color: #ccc; }
+section {
+    padding: 50px 10%;
+}
 
-/* Timeline */
+section p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 100px;
-    padding: 20px 5%;
-    max-width: 1100px;
+    gap: 300px;
+    padding: 60px;
+    max-width: auto;
     margin: auto;
 }
 
 .timeline-item {
-    padding: 20px;
+    padding: 30px;
     border-radius: 12px;
     background: #111;
     color: #fff;
     box-shadow: 0 0 20px rgba(0, 255, 100, 0.3);
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
-/* Animasyon */
-[data-aos="fade-right"],
+.timeline-item.left {
+    align-self: flex-start;
+    max-width: 75%;
+}
+
+.timeline-item.right {
+    align-self: flex-end;
+    max-width: 75%;
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-60px);
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
 [data-aos="fade-left"] {
-    transform: translateX(0);
-    opacity: 1;
-    transition: all 0.8s ease-out;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .intro h1 { font-size: 1.8rem; }
-    .intro p { font-size: 0.95rem; }
-}
-
-@media (max-width: 768px) {
-    .hero { flex-direction: column; text-align: center; }
-    .intro { max-width: 100%; }
-    .buttons { flex-direction: column; }
-    .btn { width: 80%; margin: auto; }
-    .resim-container { flex-direction: column; }
-    .post { flex-direction: column; height: auto; }
-    .proje-kutu { width: 90%; min-height: auto; }
+    transform: translateX(60px);
+    opacity: 0;
+    transition: all 1s ease-out;
 }
