@@ -1,6 +1,6 @@
 .duzenlenmis-resim {
     width: 350px;
-    height: 350px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center;
     border-radius: 2cm;
@@ -10,35 +10,35 @@
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .duzenlenmis-resim-tek {
     width: 350px;
-    height: 500px;
-    object-position:right;
+    aspect-ratio: 7 / 10;
+    object-fit: cover;
+    object-position: right;
     border-radius: 2cm;
 }
 
 .duzenlenmis-resim-tek-r {
     width: 500px;
-    height: 200px;
+    aspect-ratio: 5 / 2;
     object-fit: cover;
     object-position: center;
     border-radius: 1cm;
 }
+
 .duzenlenmis-resim-tek-p {
-    width: 100%;           /* ekran genişliğine uyumlu */
-    max-width: 500px;      /* desktop için orijinal maksimum genişlik */
-    height: auto;           /* yükseklik içeriğe göre esnek */
-    aspect-ratio: 5 / 5;   /* 500x400 oranını korur */
+    width: 500px;
+    aspect-ratio: 5 / 4;
     object-fit: cover;
     object-position: bottom;
     border-radius: 1cm;
 }
 
-/* Mobil cihazlar için ek ayar */
 @media (max-width: 768px) {
-        .hero {
+    .hero {
         flex-direction: column;
         text-align: center;
     }
@@ -53,56 +53,52 @@
         flex: 1;
     }
 
-
-    .timeline{
-      
+    .timeline {
+        gap: 48px;
+        padding: 20px 16px;
     }
-    .timeline-item.right{
-      object-fit: cover;
+    .timeline-item {
+        max-width: 100%;
+        padding: 16px;
+        align-self: stretch !important;
     }
-
-
- .duzenlenmis-resim-tek {
-        max-width: 90%;       /* mobilde biraz boşluk */
-        object-fit: cover;
-        object-position: right;
-      }
-
-    .post {
-          /* öğeleri alt alta yerleştir */
-        height: auto;            /* yüksekliği içeriğe göre ayarla */
-        
-        padding-top: 5%;         /* üst boşluğu biraz azalt */
+    .timeline-item.left,
+    .timeline-item.right {
+        align-self: stretch !important;
     }
 
-    .proje-kutu {
-      flex-direction: column;  
-      width: 90%;          /* mobilde genişliği artır, kenarlardan boşluk bırak */
-        height:auto ;    /* yüksekliği içeriğe göre ayarla */
+    .resim-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
     }
+
+    .duzenlenmis-resim,
+    .duzenlenmis-resim-tek,
+    .duzenlenmis-resim-tek-r,
     .duzenlenmis-resim-tek-p {
-    
-    max-width: 90%;    /* mobilde biraz boşluk bırak */
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
     }
-
 }
-
-
-
-
 
 .post {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;       /* desktop için yükseklik */
-    padding-top: 10%;   /* desktop için üst boşluk */
-    flex-wrap: wrap;    /* mobilde alt alta geçmesi için */
-    gap: 20px;          /* iç öğeler arası boşluk */
+    height: 50vh;
+    padding-top: 10%;
+    flex-wrap: wrap;
+    gap: 20px;
 }
+
 .proje-kutu {
-    width: auto;              /* desktop için genişlik */
-    min-height: 400px;       /* minimum yükseklik */
+    width: auto;
+    min-height: 400px;
     background: #111;
     color: #0f0;
     text-align: center;
@@ -110,7 +106,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;           /* içerik ile kenar boşluğu */
+    padding: 20px;
 }
 
 body {
@@ -218,11 +214,10 @@ section p {
     color: #ccc;
 }
 
-
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 300px;
+    gap: 180px;
     padding: 60px;
     max-width: auto;
     margin: auto;
@@ -248,14 +243,4 @@ section p {
     max-width: 75%;
 }
 
-[data-aos="fade-right"] {
-    transform: translateX(-60px);
-    opacity: 0;
-    transition: all 1s ease-out;
-}
-
-[data-aos="fade-left"] {
-    transform: translateX(60px);
-    opacity: 0;
-    transition: all 1s ease-out;
-}
+[data]()
